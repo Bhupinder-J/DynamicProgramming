@@ -51,6 +51,19 @@ int memoization(int n, int sum){
     return memoization(n, sum, dp);
 }
 int tabular(int n, int sum){
+    // vector<vector<int>> dp(n,vector<int>(sum+1,0));
+    // dp[0][0] = 1;
+    // for (int i = 1; i < n; i++) {
+    //     for (int j = 0; j <= sum; j++) {
+    //         dp[i][j] = dp[i-1][j];
+    //         int left = j-i;
+    //         if (left >= 0) {
+    //             (dp[i][j] += dp[i-1][left]) %= mod;
+    //         }
+    //     }
+    // }
+    // cout << dp[n-1][sum] << endl;
+
     vvi dp(n+1, vi(sum+1, 0));
     for(int i=0 ; i<=n ; i++) dp[i][0] = 1;
     for(int i=1 ; i<=n ; i++){
@@ -73,5 +86,6 @@ int32_t main(){
         return 0;
     }
     // cout << fermat_little_theorm(memoization(n, sum / 2)) << endl;
-    cout << fermat_little_theorm(tabular(n, sum / 2)) << endl;
+    // cout << fermat_little_theorm(tabular(n, sum / 2)) << endl;
+    cout << tabular(n - 1, sum / 2) << endl;
 }
