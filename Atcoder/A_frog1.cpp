@@ -18,16 +18,4 @@ int main(){
 		sz_1 = cur;
 	}
 	cout << sz_1 << endl;
-
-
-	// SPACE O(n)
-	
-	// vector<int> dp(n, 0);
-	// dp[n-2] = abs(h[n-1] - h[n-2]);
-
-	// for(int i=n-3 ; i>=0 ; i--){
-	// 	dp[i] = min(abs(h[i] - h[i+1]) + dp[i+1], 
-	// 				abs(h[i] - h[i+2]) + dp[i+2]);
-	// }
-	// cout << dp[0] << endl;
 }
